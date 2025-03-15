@@ -24,7 +24,22 @@ public class IncomeTaxCalculator {
         return salary - tax * salary;
     }
     public static void main(String[] args) {
-        System.out.println(caculateNetIncome(20, 10000000));
-        System.out.println(caculateNetIncome(10, 20000000));
+        try {
+            System.out.println(IncomeTaxCalculator.caculateNetIncome(-1, 10)); // Error
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error");
+        }
+
+        try {
+            System.out.println(IncomeTaxCalculator.caculateNetIncome(20, -1)); // Error
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error");
+        }
+
+        System.out.println(IncomeTaxCalculator.caculateNetIncome(70, 50000000)); // 45,000,000
+        System.out.println(IncomeTaxCalculator.caculateNetIncome(30, 50000000)); // 40,000,000
+        System.out.println(IncomeTaxCalculator.caculateNetIncome(20, 20000000)); // 18,000,000
+        System.out.println(IncomeTaxCalculator.caculateNetIncome(20, 6000000));  // 5,700,000
+        System.out.println(IncomeTaxCalculator.caculateNetIncome(20, 3000000));  // 3,000,000
     }
 }
