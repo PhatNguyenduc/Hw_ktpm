@@ -1,7 +1,7 @@
 public class IncomeTaxCalculator {
     public static double caculateNetIncome(int age, double salary) {
         // Your code here
-        if(age < 14 || age > 60){
+        if(age < 14 || age > 80){
             throw new IllegalArgumentException("Tuổi không nằm trong phạm vi tính thuế");
         }
         if(salary < 0){
@@ -36,10 +36,10 @@ public class IncomeTaxCalculator {
             System.out.println("Error");
         }
 
-        System.out.println(IncomeTaxCalculator.caculateNetIncome(70, 50000000)); // 45,000,000
-        System.out.println(IncomeTaxCalculator.caculateNetIncome(30, 50000000)); // 40,000,000
-        System.out.println(IncomeTaxCalculator.caculateNetIncome(20, 20000000)); // 18,000,000
-        System.out.println(IncomeTaxCalculator.caculateNetIncome(20, 6000000));  // 5,700,000
-        System.out.println(IncomeTaxCalculator.caculateNetIncome(20, 3000000));  // 3,000,000
+        System.out.println(caculateNetIncome(70, 50000000)); // 45,000,000
+        System.out.println(caculateNetIncome(30, 50000000)); // 40,000,000
+        System.out.println(caculateNetIncome(20, 20000000)); // 18,000,000
+        System.out.println(caculateNetIncome(20, 6000000));  // 5,700,000
+        System.out.println(caculateNetIncome(20, 3000000));  // 3,000,000
     }
 }
